@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Recipe Suggestion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Smart Recipe Finder</h1>
+            <p>Find delicious recipes with ingredients you already have!</p>
+        </header>
+
+        <div class="search-section">
+            <div class="ingredients-input">
+                <h2>Your Ingredients/የምግብ ግባአቶች</h2>
+                <div class="input-group">
+                    <input type="text" id="ingredient-input" placeholder="Enter an ingredient...">
+                    <button id="add-ingredient"><i class="fas fa-plus"></i></button>
+                </div>
+                <div id="ingredients-list" class="tags-container"></div>
+            </div>
+
+            <div class="filters">
+                <h2>Filters</h2>
+                <div class="filter-group">
+                    <label for="diet-preference">Dietary Preference:</label>
+                    <select id="diet-preference">
+                        <option value="any">Any</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="gluten-free">Gluten-Free</option>
+                        <option value="dairy-free">Dairy-Free</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="cooking-time">Max Cooking Time (minutes):</label>
+                    <input type="range" id="cooking-time" min="10" max="120" value="60">
+                    <span id="time-display">60 min</span>
+                </div>
+                <button id="search-recipes" class="primary-btn">Find Recipes</button>
+            </div>
+        </div>
+
+        <div class="results-section">
+            <h2>Recipe Suggestions /የምግብ አስተያየት</h2>
+            <div id="recipes-container" class="recipes-grid"></div>
+        </div>
+
+        <div id="recipe-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div id="modal-recipe-details"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="recipes-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
